@@ -1,4 +1,4 @@
-class Solution {
+class MaxProductNN {
 public:
     int maxProduct(int A[], int n) {
         int maxp = A[0];
