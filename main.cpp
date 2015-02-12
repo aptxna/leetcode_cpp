@@ -1,11 +1,9 @@
 #include <iostream>
-#include <string>
-#include "CountAndSay.h"
+#include "StringToInteger.h"
 
 int main() {
-	int n;
-	cout << "please input n: ";
-	cin >> n;
-	CountAndSay nstr;
-	cout << "the string is: " << nstr.countAndSay(n) << endl;
+	StringToInteger obj;
+	string s="-214747";
+	obj.atoi(s);
+	cout << "it runs" << endl;
 }
