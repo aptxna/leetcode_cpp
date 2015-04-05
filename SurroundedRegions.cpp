@@ -29,7 +29,7 @@ public:
         if (row == 0) return;
         int col = board[0].size();
         
-        // check if the alie surrounded region checked
+        // check if the alive surrounded region checked
         vector<vector<bool> > check (row, vector<bool>(col, false));
         
         // if current "O" has a way out, then put it into this queue, for BFS
