@@ -35,6 +35,10 @@ public:
     int calculateMinimumHP(vector<vector<int> > &dungeon) {
         int m = dungeon.size();
          int n = dungeon[0].size();
+         //dp[i][j]表示进入这个格子后保证knight不会死所需要的最小HP。
+         //如果一个格子的值为负，那么进入这个格子之前knight需要有的最小HP是-dungeon[i][j] + 1，方便起见这里先记为0-dungeon[i][j]，最后要加上1。
+         //如果格子的值非负，那么最小HP需求就是1，这里先记为0，最后要加上1。
+         //DP的方向是从最右下角开始一直到左上角。
          dungeon[m-1][n-1] = max(0-dungeon[m-1][n-1], 0);
          for (int i = m - 2; i >= 0; --i) {
              dungeon[i][n-1] = max(dungeon[i+1][n-1]-dungeon[i][n-1], 0);
