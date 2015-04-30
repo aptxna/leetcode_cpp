@@ -23,13 +23,15 @@ public:
         int len = nums1.size() + nums2.size();
         //偶数个元素
         if (len % 2 == 0)
+        	//注意这里的len/2和len/2+1不是下标
             return (findKth(nums1, 0, nums2, 0, len/2) + findKth(nums1, 0, nums2, 0, len/2+1)) / 2.0;
         //奇数个元素
         else
-            return findKth(nums1, 0, nums2, 0, len/2+1);
+            return findKth(nums1, 0, nums2, 0, len/2+1); //注意这里的len/2+1不是下标
     }
     
     //find the Kth large number
+    //注意这里的k不是下标，是从第1个数往后数的第k个数
     int findKth(vector<int>& a, int astart, vector<int>& b, int bstart, int k) {
         if (astart >= a.size()) return b[bstart + k - 1];
         if (bstart >= b.size()) return a[astart + k - 1];
